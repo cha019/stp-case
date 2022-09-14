@@ -1,0 +1,15 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+__pycache__
+.idea/
+*.zip
+*.out
+.python-version
+Pipfile
+Pipfile.lock
+.env
+.vscode
+.pytest_cache
+.log
+log/
+*.tar.gz

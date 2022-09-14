@@ -1,7 +1,7 @@
 package mode
 
 import (
-	SDK "git.garena.com/chao.huang/stp-case/sdk"
+	SDK "github.com/h17600445140/stp-case/sdk"
 	"github.com/myzhan/boomer"
 	"log"
 )

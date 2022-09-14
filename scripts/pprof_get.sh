@@ -30,12 +30,4 @@ wget -O threadcreate.out localhost:$pprof_df/debug/pprof/threadcreate
 #./pprof_get.sh ./payment_auth
 
 #go tool pprof -http=:8090 profile.out
-#smc -e test services download shopeepayuser-account-sppay-89133-fix-aegislimiter-bug-test-sg -s /tmp/test/trace.out -d ./
-#smc -e test services download shopeepayuser-account-sppay-89133-fix-aegislimiter-bug-test-sg -s /tmp/test/allocs.out -d ./
-#smc -e test services download shopeepayuser-account-sppay-89133-fix-aegislimiter-bug-test-sg -s /tmp/test/profile.out -d ./
-#smc -e test services download shopeepayuser-account-sppay-89133-fix-aegislimiter-bug-test-sg -s /tmp/test/blocks.out -d ./
-#smc -e test services download shopeepayuser-account-sppay-89133-fix-aegislimiter-bug-test-sg -s /tmp/test/cmdline.out -d ./
-#smc -e test services download shopeepayuser-account-sppay-89133-fix-aegislimiter-bug-test-sg -s /tmp/test/goroutine.out -d ./
-#smc -e test services download shopeepayuser-account-sppay-89133-fix-aegislimiter-bug-test-sg -s /tmp/test/heap.out -d ./
-#smc -e test services download shopeepayuser-account-sppay-89133-fix-aegislimiter-bug-test-sg -s /tmp/test/mutex.out -d ./
-#smc -e test services download shopeepayuser-account-sppay-89133-fix-aegislimiter-bug-test-sg -s /tmp/test/threadcreate.out -d ./
+#smc -e test services download xx-xx-xx-xx -s /tmp/test/trace.out -d ./

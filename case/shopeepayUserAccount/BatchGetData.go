@@ -3,25 +3,25 @@ package shopeepayUserAccount
 import (
 	"bytes"
 	"encoding/json"
-	SDK "git.garena.com/chao.huang/stp-case/sdk"
+	SDK "github.com/h17600445140/stp-case/sdk"
 	"math/rand"
 	"net/http"
 	"strconv"
 )
 
 const (
-	CaseNameBatchGetSpUidByUid = "BatchGetSpUidByUid"
+	CaseNameBatchGetData = "BatchGetData"
 )
 
 func init() {
-	SDK.RegisterCaseFn(CaseNameBatchGetSpUidByUid, BatchGetSpUidByUid)
+	SDK.RegisterCaseFn(CaseNameBatchGetData, BatchGetData)
 }
 
-func BatchGetSpUidByUid(config *SDK.CaseConfig) (*SDK.CaseResponse, error) {
+func BatchGetData(config *SDK.CaseConfig) (*SDK.CaseResponse, error) {
 
 	dataLists := SDK.GetTestData()
 
-	requestUrl := SDK.GetProxyUrlByEnvAndCid(config.ENV, config.CID)
+	requestUrl := SDK.GetUrlByEnvAndCid(config.ENV, config.CID)
 
 	req := RequestUidList{}
 	for i := 0; i < 20; i++ {
@@ -36,11 +36,7 @@ func BatchGetSpUidByUid(config *SDK.CaseConfig) (*SDK.CaseResponse, error) {
 
 	request, _ := http.NewRequest("POST", requestUrl, bytes.NewBuffer(requestBody))
 
-	request.Header.Set("X-Client-Id", SDK.GetClientId(config.ENV, config.CID))
-	request.Header.Set("X-Method", "/user.AccountSApi/BatchGetSpUidByUid")
-	request.Header.Set("X-Service", "shopeepayuser-account")
-	request.Header.Set("X-Tag", "account_limiter")
-	//request.Header.Set("X-Tag", "rate_limiter")
+	request.Header.Set("X-Service", "xxx-xxx")
 
 	newRequest := &SDK.HTTPRequest{
 		Request:     request,

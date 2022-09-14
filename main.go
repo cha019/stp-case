@@ -3,12 +3,10 @@ package main
 import (
 	"flag"
 	"fmt"
-	_ "git.garena.com/chao.huang/stp-case/case/chanRead"
-	_ "git.garena.com/chao.huang/stp-case/case/shopeepayUserAccount"
-	_ "git.garena.com/chao.huang/stp-case/case/shopeepayUserInfo"
-	_ "git.garena.com/chao.huang/stp-case/case/shopeepayUserPaymentAuth"
-	MODE "git.garena.com/chao.huang/stp-case/mode"
-	SDK "git.garena.com/chao.huang/stp-case/sdk"
+	_ "github.com/h17600445140/stp-case/case/chanRead"
+	_ "github.com/h17600445140/stp-case/case/shopeepayUserAccount"
+	MODE "github.com/h17600445140/stp-case/mode"
+	SDK "github.com/h17600445140/stp-case/sdk"
 	"github.com/myzhan/boomer"
 	"log"
 	"math/rand"
@@ -45,19 +43,18 @@ func main() {
 
 	// cmd
 	// local:
-	// go run ./main.go -mode single -case_name GetPINInfo -input "./data/test_sg.csv" -cid sg -env test -local true -max_rps 100 -c 20 -r 2
-	// go run ./main.go -mode single -case_name BatchGetSpUidByUid -input "./data/test_sg.csv" -cid sg -env test -local true -max_rps 100 -c 20 -r 2
-	// go run ./main.go -mode mix -input "./data/test.csv" -cid sg -env test -local true -max_rps 5 -c 2 -r 1 -mixCaseName GetSpUidByUid=2 -mixCaseName GetUserInfo=1
+	// go run ./main.go -mode single -case_name BatchGetData -input "./data/test.csv" -cid cn -env test -local true -max_rps 100 -c 20 -r 2
+	// go run ./main.go -mode single -case_name BatchGetData -input "./data/test.csv" -cid cn -env test -local true -max_rps 100 -c 20 -r 2
+	// go run ./main.go -mode mix -input "./data/test.csv" -cid sg -env test -local true -max_rps 5 -c 2 -r 1 -mixCaseName BatchGetData=2 -mixCaseName test=1
 
 	// remote:
 	// locust --master --expect-slave=1 -f dummy.py --no-web -c 5 -r 1 -t 10s
-	// CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o main.out -mod=vendor
-	// ./main.out -mode single -case_name GetSpUidByUid -input "./data/test.csv" -cid sg -env test -master-host xx.xx.xx.xx
-	// ./main.out -mode mix -input "./data/test.csv" -cid sg -env test -master-host xx.xx.xx.xx -mixCaseName GetSpUidByUid=2 -mixCaseName GetUserInfo=1
+	// CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o main.out
+	// ./main.out -mode single -case_name BatchGetData -input "./data/test.csv" -cid cn -env test -master-host xx.xx.xx.xx
+	// ./main.out -mode mix -input "./data/test.csv" -cid cn -env test -master-host xx.xx.xx.xx -mixCaseName BatchGetData=2 -mixCaseName test=1
 
 	// chan
-	// go run ./main.go -mode single -case_name test -input "./data/test.csv" -dataMode chanRead -cid sg -env test -local true -max_rps 100 -c 20 -r 2
-	// go run ./main.go -mode single -case_name GetUserInfoChan -input "./data/data.csv" -dataMode chanRead -cid sg -env test -local true -max_rps 100 -c 20 -r 2
+	// go run ./main.go -mode single -case_name test -input "./data/test.csv" -dataMode chanRead -cid cn -env test -local true -max_rps 100 -c 20 -r 2
 
 	flag.StringVar(&caseName, "case_name", "demo", "test case which was registered")
 	flag.StringVar(&testData, "input", "./data/test.csv", "can be a file path, json etc.")

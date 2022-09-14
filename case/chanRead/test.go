@@ -2,7 +2,7 @@ package chanRead
 
 import (
 	"fmt"
-	SDK "git.garena.com/chao.huang/stp-case/sdk"
+	SDK "github.com/h17600445140/stp-case/sdk"
 )
 
 const (
@@ -14,6 +14,8 @@ func init() {
 }
 
 func Test(config *SDK.CaseConfig) (*SDK.CaseResponse, error) {
+
+	fmt.Println(config)
 
 	var data string
 

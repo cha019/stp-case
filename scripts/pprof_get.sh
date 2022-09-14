@@ -25,9 +25,7 @@ wget -O mutex.out localhost:$pprof_df/debug/pprof/mutex
 wget -O threadcreate.out localhost:$pprof_df/debug/pprof/threadcreate
 
 #execute cmd
-#./pprof_get.sh ./info
-#./pprof_get.sh ./account
-#./pprof_get.sh ./payment_auth
+#./pprof_get.sh ./xxx
 
 #go tool pprof -http=:8090 profile.out
 #smc -e test services download xx-xx-xx-xx -s /tmp/test/trace.out -d ./

@@ -3,8 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
+	_ "github.com/h17600445140/stp-case/case/api"
 	_ "github.com/h17600445140/stp-case/case/chanRead"
-	_ "github.com/h17600445140/stp-case/case/shopeepayUserAccount"
 	MODE "github.com/h17600445140/stp-case/mode"
 	SDK "github.com/h17600445140/stp-case/sdk"
 	"github.com/myzhan/boomer"

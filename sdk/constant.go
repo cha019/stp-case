@@ -7,14 +7,14 @@ func GetUrlByEnvAndCid(env string, cid string) string {
 	if env == "live" {
 		switch strings.ToLower(cid) {
 		case "cn":
-			return "https://www.test.baidu.com"
+			return "https://www.test.xxx.com"
 		default:
 			return ""
 		}
 	} else if env == "test" {
 		switch strings.ToLower(cid) {
 		case "cn":
-			return "https://www.test.baidu.com"
+			return "https://www.test.xxx.com"
 		default:
 			return ""
 		}

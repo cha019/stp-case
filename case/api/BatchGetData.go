@@ -1,4 +1,4 @@
-package shopeepayUserAccount
+package api
 
 import (
 	"bytes"
@@ -25,8 +25,8 @@ func BatchGetData(config *SDK.CaseConfig) (*SDK.CaseResponse, error) {
 
 	req := RequestUidList{}
 	for i := 0; i < 20; i++ {
-		shopeeId, _ := strconv.Atoi(dataLists[rand.Intn(len(dataLists))][0])
-		req.UidList = append(req.UidList, shopeeId)
+		id, _ := strconv.Atoi(dataLists[rand.Intn(len(dataLists))][0])
+		req.UidList = append(req.UidList, id)
 	}
 
 	requestBody, err := json.Marshal(req)
